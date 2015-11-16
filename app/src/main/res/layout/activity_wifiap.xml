@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+
+	<LinearLayout
+		android:id="@+id/wifiap_ly_wifistatus"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:background="@drawable/ab_solid_dark_holo" >
+
+		<TextView
+			android:id="@+id/wifiap_tv_wifistatus"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:gravity="center"
+			android:textSize="18sp" >
+		</TextView>
+	</LinearLayout>
+
+	<ListView
+	    android:id="@+id/wifiap_lv_wifi"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@id/wifiap_ly_wifistatus"
+	    android:drawSelectorOnTop="true" />
+
+	<LinearLayout
+		android:id="@+id/wifiap_lv_create_ok"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:orientation="vertical"
+		android:visibility="gone" >
+
+		<ImageView
+			android:layout_width="120dp"
+			android:layout_height="120dp"
+			android:layout_gravity="center"
+			android:src="@drawable/ic_notification" />
+
+		<TextView
+			android:id="@+id/wifiap_tv_createap_ssid"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center" />
+	</LinearLayout>
+
+</RelativeLayout>

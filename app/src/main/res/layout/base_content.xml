@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+/*
+ * Wifi Connector
+ * 
+ * Copyright (c) 2011 Kevin Yuan (farproc@gmail.com)
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * 
+ **/ 
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="5sp"
+	>
+	<!-- 状态 -->
+	<LinearLayout android:id="@+id/Status"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/wifi_status"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/Status_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/status_connected"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+	
+	</LinearLayout>
+	<!-- 速度 -->
+	<LinearLayout android:id="@+id/Speed"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/wifi_link_speed"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/LinkSpeed_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+	</LinearLayout>
+	<!-- 频率 -->
+	<LinearLayout android:id="@+id/Frequency"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/frequency"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/Frequency_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+			
+	</LinearLayout>
+	<!-- 信号强度 -->
+	<LinearLayout android:id="@+id/signal"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/signal_strength"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/SignalStrength_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+	
+	</LinearLayout>
+	<!-- 安全性 -->
+	<LinearLayout android:id="@+id/Security"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/security"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/Security_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+			
+	</LinearLayout>
+	<!-- Mac地址(BSSID) -->
+	<LinearLayout android:id="@+id/MacAddress"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/mac_address"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/MacAddress_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+			
+	</LinearLayout>
+	<!-- IP地址 -->
+	<LinearLayout android:id="@+id/IPAddress"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/ip_address"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/IPAddress_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+			
+	</LinearLayout>
+	<!-- 子网掩码 -->
+	<LinearLayout android:id="@+id/Netmask"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/netmask"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/Netmask_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>	
+	</LinearLayout>
+	<!-- 网关-->
+	<LinearLayout android:id="@+id/Gateway"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/gateway"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/Gateway_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>	
+	</LinearLayout>
+	
+	<!-- DNS1-->
+	<LinearLayout android:id="@+id/DNS1"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/dns1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/DNS1_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>	
+	</LinearLayout>
+	<!-- DNS2-->
+	<LinearLayout android:id="@+id/DNS2"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/dns2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/DNS2_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>	
+	</LinearLayout>
+	<!-- 当前连接客户端数-->
+	<LinearLayout android:id="@+id/CrrntConnecsCnt"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		
+		<TextView
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/crrntConnecsCnt"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView android:id="@+id/CrrntConnecsCnt_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:paddingLeft = "5sp"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			/>	
+	</LinearLayout>
+	<!-- 密码 -->
+	<LinearLayout android:id="@+id/Password"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		
+		<TextView android:id="@+id/Password_TextView"
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/please_type_passphrase"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingTop="10sp"
+			/>
+			
+		<com.farproc.wifi.connecter.ChangingAwareEditText android:id="@+id/Password_EditText"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			android:inputType="text|textPassword"/>
+			
+		<CheckBox android:id="@+id/ShowPassword_CheckBox"
+			style="@style/textAppearanceBaseContent"
+			android:text="@string/wifi_show_password"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"/>
+	
+	</LinearLayout>
+	
+</LinearLayout>

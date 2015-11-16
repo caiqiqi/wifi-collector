@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <!-- 这是ListView中每一项的布局 -->
+    
+    <!-- android:layout_alignTop表示目标控件和引用控件的上边缘对齐 -->
+    <ImageView
+        android:id="@+id/itemIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="369dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@id/itemIcon"
+        android:gravity="center_vertical"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" />
+
+</RelativeLayout>

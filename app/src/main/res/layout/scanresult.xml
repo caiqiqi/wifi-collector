@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_view" />
+ 
+ <!--    
+    <ScrollView
+        android:id="@+id/scanResult"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/content_bk" >
+    </ScrollView>
+ -->
+ 
+    <ListView
+        android:id="@+id/listview_scanResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:background="@color/content_bk" >
+    </ListView>
+    
+    <include layout="@layout/buttons_view_divider"/>
+    
+    <Button
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" 
+            android:text="@string/confirm"/>"
+    
+</LinearLayout>
