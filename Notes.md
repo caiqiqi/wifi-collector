@@ -4,9 +4,9 @@ Today I talked with Gilani,and he mentioned that there will be a famous meeting 
 
 I dont know why by default,Android Studio uses `buildToolsVersion：23`，this means I use `C:\Android\sdk\build-tools\23.0.0\aapt.exe`,then it gives me this error.
 ![23.0.0-aapt](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/issue-appt-23.PNG) </br>
-When I use 21.0.0-aapt.exe,it gives me this error.
+When I use `21.0.0-aapt.exe`,it gives me this error.
 ![21.0.0-aapt](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/21.0.0-aapt.PNG) </br>
-When I use 21.1.2-aapt.exe,it gives me this error.
+When I use `21.1.2-aapt.exe`,it gives me this error.
 ![21.1.2-aapt](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/21.1.2-aapt.PNG) </br>
 
 Finally,I searched google,and found an ![answer](http://stackoverflow.com/questions/29766830/execution-failed-for-task-appcompiledebugaidl-aidl-is-missing) in stackoverflow.At first,I just modified the buildToolsVersion to 21.0.0 or 21.1.2,but I still failed.At last,I found this same anwer somewhere else,which indicates that this answer really solved their problem.So I took a look back at this answer,and I knew that I should update to carery version,and click "check update" so as to update Android Studio to the latest version.After 5 minutes,problems solved!</br>
