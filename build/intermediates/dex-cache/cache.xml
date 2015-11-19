@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\libs\android-support-v7-recyclerview.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="953b7a56a6304b424ec795f9b7c6c45f73e1f184">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\android-support-v7-recyclerview-958de9cb92eec22c3f482beca27773bde68f918a.jar" />
+    </item>
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\libs\android-support-v7-mediarouter.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="39b736a42b83ecfdf5bc78de1bac0b682fe7c152">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\android-support-v7-mediarouter-23da184384a36fc49687e70924be6fc44803df96.jar" />
+    </item>
+    <item
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-99c1ccd53a7fa88549c32ac544faa9e96cd17557.jar" />
+    </item>
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\libs\picasso-2.5.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ff0e000d1e27e356567f56c92af3b8ab912636f">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\picasso-2.5.0-ebd98454e5a0c2633fdd9c1c4c3216be4bfbcc6d.jar" />
+    </item>
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\libs\android-support-v7-palette.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c2a7b80a02947d7c90e405d7823bb1ad76de22a5">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\android-support-v7-palette-a50823b97f22edcae342976d73d7601037f2bb80.jar" />
+    </item>
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\libs\android-support-v7-cardview.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f5b02525cdc169f2b2a98eb1c58ba9227ef8bef6">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\android-support-v7-cardview-abd557aae4875b3c59e42881bf364af416caae82.jar" />
+    </item>
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\classes-d07b2f33f763b8a67e3de6b0b560b67f8e2b3263.jar" />
+    </item>
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-c942196c6c19bec9dc86f84a6eea048c35dea4e9.jar" />
+    </item>
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2e8c06a7aad26ba8d2d5cab8134556594fe36856">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\classes-1bcd1863bf843f125abc71efc795aa9a28eab307.jar" />
+    </item>
+    <item
+        jar="C:\GitProject\android-wifi-connecter1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\GitProject\android-wifi-connecter1\app\build\intermediates\pre-dexed\debug\classes-a36b005ebad7280ba77f7517a6f5cce7a5f6cc65.jar" />
+    </item>
+
+</items>
