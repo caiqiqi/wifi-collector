@@ -15,11 +15,14 @@
 -->
 
 <resources>
+
+    <!-- <attr name="icon" format="reference" /> -->
+<!--I learned this usage from stackoverflow,to define the format at the beginning of this file -->
     <declare-styleable name="WifiEncryptionState">
         <attr name="state_encrypted" format="boolean" />
     </declare-styleable>
     <declare-styleable name="IconPreferenceScreen">
-        <attr name="icon" format="reference" />
+        <attr name="icon" />
     </declare-styleable>
 
     <declare-styleable name="SetupWizardIllustration">

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values-v11/colors.xml -->
-    <eat-comment/>
-    <color name="buttons_view_bk">@android:color/transparent</color>
-    <color name="content_bk">@android:color/transparent</color>
-    <color name="title_text">#6396f7</color>
     <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values-v11/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat.Inverse">
@@ -359,8 +354,4 @@
         <item name="android:listChoiceIndicatorSingle">@drawable/abc_btn_radio_material</item>
         <item name="android:listChoiceIndicatorMultiple">@drawable/abc_btn_check_material</item>
     </style>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values-v11/styles.xml -->
-    <eat-comment/>
-    <style name="PlatformDialog" parent="android:Theme.Holo.Dialog"/>
-    <style name="textAppearanceBaseContent" parent="@android:style/TextAppearance"/>
 </resources>

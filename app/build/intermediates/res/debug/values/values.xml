@@ -1043,16 +1043,8 @@
     <color name="button_material_light">#ffd6d7d7</color>
     <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/colors.xml -->
     <eat-comment/>
-    <color name="buttons_view_bk">@android:color/background_light</color>
-    <color name="circle_avatar_frame_color">#ffffffff</color>
-    <color name="circle_avatar_frame_pressed_color">#ffffffff</color>
-    <color name="circle_avatar_frame_shadow_color">#80000000</color>
-    <color name="content_bk">@android:color/darker_gray</color>
-    <color name="crypt_keeper_clock_am_pm">#ff9a9a9a</color>
-    <color name="crypt_keeper_clock_background">#ff9a9a9a</color>
-    <color name="crypt_keeper_clock_foreground">#ff666666</color>
-    <color name="crypt_keeper_password_background">#70606060</color>
-    <color name="dashboard_background_color">#ffe1e1e0</color>
+    <color name="buttons_view_bk">@android:color/darker_gray</color>
+    <color name="content_bk">@android:color/background_light</color>
     <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
@@ -1061,7 +1053,6 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/colors.xml -->
     <eat-comment/>
-    <color name="divider_color">#20ffffff</color>
     <color name="gray_f0f0f0">#f0f0f0</color>
     <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
@@ -1071,34 +1062,11 @@
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
     <color name="link_text_material_dark">@color/material_deep_teal_200</color>
     <color name="link_text_material_light">@color/material_deep_teal_500</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/colors.xml -->
-    <eat-comment/>
-    <color name="lock_pattern_background">#00000000</color>
-    <color name="lock_pattern_view_error_color">#fff4511e</color>
-    <color name="lock_pattern_view_regular_color">#ff37474f</color>
-    <color name="lock_pattern_view_success_color">@color/theme_accent</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
-    <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
     <color name="material_deep_teal_200">#ff80cbc4</color>
     <color name="material_deep_teal_500">#ff009688</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/colors.xml -->
-    <eat-comment/>
-    <color name="material_empty_color_light">#FFCED7DB</color>
-    <color name="memory_apps_usage">#77831A</color>
-    <color name="memory_avail">@color/material_empty_color_light</color>
-    <color name="memory_cache">#479392</color>
-    <color name="memory_dcim">#793A7F</color>
-    <color name="memory_downloads">#476093</color>
-    <color name="memory_misc">#7C3030</color>
-    <color name="memory_music">#8E562A</color>
-    <color name="memory_used">#F00</color>
-    <color name="memory_user_dark">#316665</color>
-    <color name="memory_user_light">#479392</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
-    <eat-comment/>
     <color name="primary_dark_material_dark">#ff000000</color>
     <color name="primary_dark_material_light">#ff757575</color>
     <color name="primary_material_dark">#ff212121</color>
@@ -1107,49 +1075,14 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/colors.xml -->
-    <eat-comment/>
-    <color name="red">#F00</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
-    <eat-comment/>
     <color name="ripple_material_dark">#40ffffff</color>
     <color name="ripple_material_light">#40000000</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/colors.xml -->
-    <eat-comment/>
-    <color name="running_processes_apps_ram">#ff009587</color>
-    <color name="running_processes_free_ram">#ffced7db</color>
-    <color name="running_processes_system_ram">#ff384248</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
-    <eat-comment/>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/colors.xml -->
-    <eat-comment/>
-    <color name="setup_divider_color_dark">#33ffffff</color>
-    <color name="setup_divider_color_light">#33000000</color>
-    <color name="setup_wizard_color_accent_dark">#ff00e4ff</color>
-    <color name="setup_wizard_color_accent_light">#ff00828e</color>
-    <color name="setup_wizard_wifi_color_dark">#ff00e4ff</color>
-    <color name="setup_wizard_wifi_color_light">#ff0096a6</color>
-    <color name="switch_accent_color">#ff7fcac3</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
-    <eat-comment/>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/colors.xml -->
-    <eat-comment/>
-    <color name="switchbar_background_color">#ff37474f</color>
-    <color name="theme_accent">#ff009688</color>
-    <color name="theme_primary">#ff263238</color>
-    <color name="theme_primary_dark">#ff21272b</color>
-    <color name="title_color">@android:color/holo_blue_light</color>
-    <color name="unlock_pattern_view_error_color">#fff4511e</color>
-    <color name="unlock_pattern_view_regular_color">@android:color/white</color>
-    <color name="unlock_pattern_view_success_color">@color/theme_accent</color>
-    <color name="wifi_assistant_color_accent">#ff009587</color>
-    <color name="wifi_divider">#ffe0e0e0</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
     <declare-styleable name="ActionBarLayout"><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ActionMenuItemView"><attr name="android:minWidth"/></declare-styleable>
@@ -1165,7 +1098,7 @@
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="topBottomBarArrowSize"/><attr format="dimension" name="middleBarArrowSize"/><attr format="dimension" name="barSize"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="GridLayout"><attr name="orientation"><enum name="horizontal" value="0"/><enum name="vertical" value="1"/></attr><attr format="integer" name="rowCount"/><attr format="integer" name="columnCount"/><attr format="boolean" name="useDefaultMargins"/><attr name="alignmentMode"><enum name="alignBounds" value="0"/><enum name="alignMargins" value="1"/></attr><attr format="boolean" name="rowOrderPreserved"/><attr format="boolean" name="columnOrderPreserved"/></declare-styleable>
     <declare-styleable name="GridLayout_Layout"><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_margin"/><attr name="android:layout_marginLeft"/><attr name="android:layout_marginTop"/><attr name="android:layout_marginRight"/><attr name="android:layout_marginBottom"/><attr format="integer" name="layout_row"/><attr format="integer" min="1" name="layout_rowSpan"/><attr format="float" name="layout_rowWeight"/><attr format="integer" name="layout_column"/><attr format="integer" min="1" name="layout_columnSpan"/><attr format="float" name="layout_columnWeight"/><attr name="layout_gravity"><flag name="top" value="0x30"/><flag name="bottom" value="0x50"/><flag name="left" value="0x03"/><flag name="right" value="0x05"/><flag name="center_vertical" value="0x10"/><flag name="fill_vertical" value="0x70"/><flag name="center_horizontal" value="0x01"/><flag name="fill_horizontal" value="0x07"/><flag name="center" value="0x11"/><flag name="fill" value="0x77"/><flag name="clip_vertical" value="0x80"/><flag name="clip_horizontal" value="0x08"/><flag name="start" value="0x00800003"/><flag name="end" value="0x00800005"/></attr></declare-styleable>
-    <declare-styleable name="IconPreferenceScreen"><attr format="reference" name="icon"/></declare-styleable>
+    <declare-styleable name="IconPreferenceScreen"><attr name="icon"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr><attr format="dimension" name="dividerPadding"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat_Layout"><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_weight"/><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ListPopupWindow"><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/></declare-styleable>
@@ -1185,8 +1118,6 @@
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
     <declare-styleable name="WifiEncryptionState"><attr format="boolean" name="state_encrypted"/></declare-styleable>
-    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
-    <eat-comment/>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
     <dimen name="abc_action_bar_default_padding_material">4dp</dimen>
     <dimen name="abc_action_bar_icon_vertical_padding_material">16dp</dimen>
@@ -2337,6 +2268,11 @@
         <item name="android:listChoiceIndicatorMultiple">@drawable/abc_btn_check_material</item>
     </style>
     <style name="Platform.AppCompat.Light.Dialog" parent="Platform.AppCompat.Dialog"/>
+    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="PlatformDialog" parent="android:Theme.Dialog"/>
+    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <eat-comment/>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
         <item name="android:layout_gravity">center_vertical|left</item>
         <item name="android:paddingRight">8dp</item>
@@ -2496,4 +2432,7 @@
     <style name="Widget.AppCompat.Spinner.DropDown.ActionBar" parent="Base.Widget.AppCompat.Spinner.DropDown.ActionBar"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <!-- From: file:/C:/GitProject/android-wifi-connecter1/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="textAppearanceBaseContent" parent="@android:style/TextAppearance.Small.Inverse"/>
 </resources>

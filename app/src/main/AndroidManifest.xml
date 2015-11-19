@@ -28,11 +28,13 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.farproc.wifi.connecter"
-      android:versionCode="15"
-      android:versionName="2.0.2"
-      android:installLocation="auto">
-      
+    xmlns:tools="http://schemas.android.com/tools"
+
+    package="com.farproc.wifi.connecter"
+    android:versionCode="15"
+    android:versionName="2.0.2"
+    android:installLocation="auto">
+
     <uses-sdk 
     	android:minSdkVersion="17"
     	android:targetSdkVersion="21"/>
@@ -42,12 +44,11 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
       
-    <application android:icon="@drawable/ic_notification" 
+    <application android:icon="@mipmap/ic_launcher"
         android:allowBackup = "true"
     	android:label="@string/app_name" 
     	android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
     	<!-- 哦 哈哈就是这个效果，浅色主题，而黑色导航栏-->
-    	
  <!-- 其实只有两个Activity和一个Service -->
         
         <activity android:name="com.farproc.wifi.ui.WifiScanActivity">
