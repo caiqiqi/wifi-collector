@@ -1345,12 +1345,13 @@
     <string name="netmask">Subnet Mask</string>
     <string name="please_type_passphrase">Password</string>
     <string name="security">Security</string>
-    <string name="send_to_server">Send to server</string>
     <string name="set_server">Set Server</string>
     <string name="signal_strength">Strength</string>
+    <string name="start_sync">Start Sync with server</string>
     <string name="status_connected">Connected</string>
     <string name="status_connecting">Connecting…</string>
-    <string name="stop_updating">Stop Updating</string>
+    <string name="stop_sync">Stop Sync</string>
+    <string name="sync_stopped">"Sync stopped"</string>
     <string name="toastFailed">Failed!</string>
     <string name="wifi_change_password">Change password</string>
     <string name="wifi_connect_to">Connect to %s</string>

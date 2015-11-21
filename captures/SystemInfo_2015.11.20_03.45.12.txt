@@ -1,0 +1,157 @@
+Applications Memory Usage (kB):
+Uptime: 606615 Realtime: 606615
+
+Total PSS by process:
+    81389 kB: com.android.systemui (pid 1107 / activities)
+    61974 kB: system (pid 752)
+    29766 kB: com.android.settings (pid 2348 / activities)
+    27250 kB: com.android.launcher3 (pid 1600 / activities)
+    19189 kB: com.android.phone (pid 1302)
+    18054 kB: mediaserver (pid 456)
+    13805 kB: zygote (pid 457)
+    12012 kB: local_opengl (pid 296)
+    11472 kB: com.android.inputmethod.latin (pid 1185)
+    11066 kB: com.android.email (pid 1685)
+     9741 kB: android.process.acore (pid 1408)
+     8233 kB: com.android.mms (pid 1743)
+     7644 kB: com.android.calendar (pid 1503)
+     7361 kB: com.android.deskclock (pid 1568)
+     7180 kB: com.android.server.telecom (pid 1272)
+     6921 kB: com.android.providers.calendar (pid 1541)
+     6824 kB: android.process.media (pid 2318)
+     6577 kB: com.android.gallery3d (pid 2042)
+     6296 kB: com.android.exchange (pid 1639)
+     5663 kB: com.android.camera2 (pid 1974)
+     5323 kB: com.genymotion.superuser (pid 2074)
+     4509 kB: com.android.voicedialer (pid 1955)
+     4504 kB: com.android.musicfx (pid 2199)
+     4418 kB: com.android.onetimeinitializer (pid 1932)
+     4338 kB: com.android.smspush (pid 1862)
+     2303 kB: surfaceflinger (pid 734)
+     1784 kB: logd (pid 287)
+     1740 kB: drmserver (pid 89)
+     1390 kB: wpa_supplicant (pid 2285)
+     1189 kB: genyd (pid 83)
+     1107 kB: netd (pid 455)
+      886 kB: vold (pid 292)
+      738 kB: keystore (pid 92)
+      719 kB: rild (pid 88)
+      683 kB: debuggerd (pid 87)
+      524 kB: adbd (pid 96)
+      472 kB: healthd (pid 288)
+      450 kB: sh (pid 85)
+      432 kB: genybaseband (pid 98)
+      430 kB: dhcpcd (pid 2289)
+      430 kB: sh (pid 2434)
+      425 kB: lmkd (pid 289)
+      401 kB: /init (pid 1)
+      393 kB: sdcard (pid 95)
+      392 kB: dumpsys (pid 2457)
+      313 kB: installd (pid 91)
+      308 kB: ueventd (pid 62)
+      296 kB: su (pid 93)
+      283 kB: logcat (pid 2439)
+      279 kB: logcat (pid 2445)
+      275 kB: logcat (pid 2451)
+      264 kB: servicemanager (pid 291)
+      208 kB: logwrapper (pid 84)
+      196 kB: local_camera (pid 299)
+      195 kB: vinput (pid 294)
+      195 kB: local_gps (pid 297)
+      195 kB: local_camera (pid 298)
+      188 kB: vinput_seamless (pid 295)
+
+Total PSS by OOM adjustment:
+    63954 kB: Native
+               18054 kB: mediaserver (pid 456)
+               13805 kB: zygote (pid 457)
+               12012 kB: local_opengl (pid 296)
+                2303 kB: surfaceflinger (pid 734)
+                1784 kB: logd (pid 287)
+                1740 kB: drmserver (pid 89)
+                1390 kB: wpa_supplicant (pid 2285)
+                1189 kB: genyd (pid 83)
+                1107 kB: netd (pid 455)
+                 886 kB: vold (pid 292)
+                 738 kB: keystore (pid 92)
+                 719 kB: rild (pid 88)
+                 683 kB: debuggerd (pid 87)
+                 524 kB: adbd (pid 96)
+                 472 kB: healthd (pid 288)
+                 450 kB: sh (pid 85)
+                 432 kB: genybaseband (pid 98)
+                 430 kB: dhcpcd (pid 2289)
+                 430 kB: sh (pid 2434)
+                 425 kB: lmkd (pid 289)
+                 401 kB: /init (pid 1)
+                 393 kB: sdcard (pid 95)
+                 392 kB: dumpsys (pid 2457)
+                 313 kB: installd (pid 91)
+                 308 kB: ueventd (pid 62)
+                 296 kB: su (pid 93)
+                 283 kB: logcat (pid 2439)
+                 279 kB: logcat (pid 2445)
+                 275 kB: logcat (pid 2451)
+                 264 kB: servicemanager (pid 291)
+                 208 kB: logwrapper (pid 84)
+                 196 kB: local_camera (pid 299)
+                 195 kB: vinput (pid 294)
+                 195 kB: local_gps (pid 297)
+                 195 kB: local_camera (pid 298)
+                 188 kB: vinput_seamless (pid 295)
+    61974 kB: System
+               61974 kB: system (pid 752)
+   107758 kB: Persistent
+               81389 kB: com.android.systemui (pid 1107 / activities)
+               19189 kB: com.android.phone (pid 1302)
+                7180 kB: com.android.server.telecom (pid 1272)
+    29766 kB: Foreground
+               29766 kB: com.android.settings (pid 2348 / activities)
+     4338 kB: Visible
+                4338 kB: com.android.smspush (pid 1862)
+    11472 kB: Perceptible
+               11472 kB: com.android.inputmethod.latin (pid 1185)
+    27250 kB: Home
+               27250 kB: com.android.launcher3 (pid 1600 / activities)
+    95080 kB: Cached
+               11066 kB: com.android.email (pid 1685)
+                9741 kB: android.process.acore (pid 1408)
+                8233 kB: com.android.mms (pid 1743)
+                7644 kB: com.android.calendar (pid 1503)
+                7361 kB: com.android.deskclock (pid 1568)
+                6921 kB: com.android.providers.calendar (pid 1541)
+                6824 kB: android.process.media (pid 2318)
+                6577 kB: com.android.gallery3d (pid 2042)
+                6296 kB: com.android.exchange (pid 1639)
+                5663 kB: com.android.camera2 (pid 1974)
+                5323 kB: com.genymotion.superuser (pid 2074)
+                4509 kB: com.android.voicedialer (pid 1955)
+                4504 kB: com.android.musicfx (pid 2199)
+                4418 kB: com.android.onetimeinitializer (pid 1932)
+
+Total PSS by category:
+   112886 kB: Native
+   102388 kB: Dalvik
+    36314 kB: .so mmap
+    30296 kB: .dex mmap
+    29323 kB: code mmap
+    29108 kB: Ashmem
+    23587 kB: image mmap
+    13324 kB: Dalvik Other
+     9870 kB: .apk mmap
+     5247 kB: Other mmap
+     4520 kB: Stack
+     3287 kB: Unknown
+     1303 kB: .ttf mmap
+      127 kB: Other dev
+        8 kB: .jar mmap
+        4 kB: Cursor
+        0 kB: Graphics
+        0 kB: GL
+        0 kB: Memtrack
+
+Total RAM: 1028632 kB (status normal)
+ Free RAM: 807672 kB (95080 cached pss + 515740 cached + 196852 free)
+ Used RAM: 367552 kB (306512 used pss + 8692 buffers + 29312 shmem + 23036 slab)
+ Lost RAM: -146592 kB
+   Tuning: 96 (large 256), oom 184320 kB, restore limit 61440 kB (high-end-gfx)
