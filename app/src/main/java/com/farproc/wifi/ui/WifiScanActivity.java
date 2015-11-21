@@ -55,7 +55,7 @@ public class WifiScanActivity extends PreferenceActivity {
 
 	public ScheduledExecutorService mExecutor;
 
-	private Handler mHandler;
+	public Handler mHandler;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -119,7 +119,7 @@ public class WifiScanActivity extends PreferenceActivity {
 
 	private void startNewThread() {
 		// 加一个新线程用于与服务器通信
-		mClientThread = new ClientThread(WifiScanActivity.this);
+		mClientThread = new ClientThread(mHandler);
 		// 在主线程中启动ClientThread线程用来 a与服务器通信
 		new Thread(mClientThread).start();
 	}

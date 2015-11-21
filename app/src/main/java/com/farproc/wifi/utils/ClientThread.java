@@ -25,24 +25,24 @@ public class ClientThread implements Runnable {
 	private String SERVER_IP = Constants.SERVER_IP;
 	private int SERVER_PORT = Constants.SERVER_PORT;
 
-	private Context mContext;
 	private Socket s;
 
-	// 向UI线程发送消息的Handler
-	private static Handler mHandler = new Handler();
 	// 接收UI线程消息的Handler对象
 	public Handler rcvHandler;
 
+	private Handler mHandler;
+	//WifiScanActivity的引用
+//	private Context mContext;
 	// 该线程所处理的Socket所对应的输入流
 	private BufferedReader br;
 
 	private OutputStream os;
-	// 改用ObjectOutputstream
+
 	private ObjectOutputStream oos;
 
 
-	public ClientThread(Context context) {
-		this.mContext = context;
+	public ClientThread(Handler handler) {
+		this.mHandler = handler;
 	}
 
 	public void run() {
@@ -54,35 +54,36 @@ public class ClientThread implements Runnable {
 			// 为当前线程初始化Looper
 			Looper.prepare();
 
-			// 注意Handler要在onCreate中创建，而不是在Thread线程创建之后再创建
-			// 创建rcvHandler对象
+
 			rcvHandler = new Handler() {
 				@Override
 				public void handleMessage(Message msg) {
 
-					if (msg.what == Constants.MESSAGE_TO_BE_SENT) {
+					if (msg.what == Constants.MESSAGE_TO_BE_SENT){
+							List<ScanResult> list_result = (List<ScanResult>) msg.obj;
+							List<String> list_string = convertScanResult(list_result);
 
-						List<ScanResult> list_result = (List<ScanResult>) msg.obj;
-						List<String> list_string = convertScanResult(list_result);
+							try {
 
-						try {
+								if (oos != null) {
+									oos.writeObject(list_string);
+									oos.flush();
+									Log.d(TAG, "已写入ObjectOutputStream");
+								}
 
-							if (oos != null) {
-								oos.writeObject(list_string);
-								oos.flush();
-								Log.d(TAG, "已写入ObjectOutputStream");
+							} catch (UnsupportedEncodingException e) {
+								e.printStackTrace();
+							} catch (IOException e) {
+								e.printStackTrace();
 							}
-
-						} catch (UnsupportedEncodingException e) {
-							e.printStackTrace();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
 
 					}
 				}
 
 			};
+
+
+			//必须要这这里启动一个新线程，而不能直接写run方法里面的代码，因为如果不新开一个线程，那么loop不会运行
 			// 启动一条子线程来读取服务器响应的数据
 			new Thread() {
 
@@ -95,9 +96,7 @@ public class ClientThread implements Runnable {
 					try {
 						while ((content = br.readLine()) != null) {
 							Log.d(TAG, "子线程读取到消息");
-							// 每当读取到来自服务器的数据(一行一行的)之后，
-							// 发送消息通知主线程，更新界面
-							// 显读到的数据
+
 							Message msg = new Message();
 							msg.what = Constants.MESSAGE_RECEIVED_FROM_SERVER;
 							msg.obj = content;
@@ -140,7 +139,6 @@ public class ClientThread implements Runnable {
 	
 /** 由于ScanResult不能Serizilible，这里将其转换为String */
 	private List<String> convertScanResult(List<ScanResult> list){
-		Log.d(TAG, "convertScanResult");
 		List<String> strList= new ArrayList<String>();
 		String strScanResult;
 		for (ScanResult scanResult: list){
