@@ -1,5 +1,6 @@
 # Built application files
 *.apk
+*.dex
 
 # Java class files
 *.class
