@@ -15,4 +15,5 @@ local.properties
 
 # dex,apk
 *.apk
+*.ap_
 *.dex
