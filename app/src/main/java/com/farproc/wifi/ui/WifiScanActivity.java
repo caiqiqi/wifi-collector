@@ -51,7 +51,8 @@ public class WifiScanActivity extends PreferenceActivity {
 	private ListView mListView;
 	private WifiapAdapter mAdapter;
 
-	private ClientThread mClientThread;
+	private ClientThread mRun_ClientThread;
+	private Thread mThd_ClientThread;
 
 	public ScheduledExecutorService mExecutor;
 
@@ -112,16 +113,17 @@ public class WifiScanActivity extends PreferenceActivity {
 		// 靠，直接把mList_Results作为msg.obj不就行了
 		msg.obj = scanResult;
 
-		if (mClientThread.rcvHandler != null) {
-			mClientThread.rcvHandler.sendMessage(msg);
+		if (mRun_ClientThread.rcvHandler != null) {
+			mRun_ClientThread.rcvHandler.sendMessage(msg);
 		}
 	}
 
 	private void startNewThread() {
 		// 加一个新线程用于与服务器通信
-		mClientThread = new ClientThread(mHandler);
+		mRun_ClientThread = new ClientThread(mHandler);
 		// 在主线程中启动ClientThread线程用来 a与服务器通信
-		new Thread(mClientThread).start();
+		mThd_ClientThread = new Thread(mRun_ClientThread);
+		mThd_ClientThread.start();
 	}
 
 	private void initAdapter() {
@@ -144,7 +146,7 @@ public class WifiScanActivity extends PreferenceActivity {
 
 				if (msg.what == Constants.MESSAGE_RECEIVED_FROM_SERVER) {
 					// 先通知用户，已经接受到来自服务器的消息了
-					Toast.makeText(WifiScanActivity.this, TAG + "已更新热点信息",
+					Toast.makeText(WifiScanActivity.this, TAG + "Synchronized!",
 							Toast.LENGTH_SHORT).show();
 
 					// TODO 还有后续的功能待完善。。。先不把msg显示出来
@@ -428,6 +430,14 @@ public class WifiScanActivity extends PreferenceActivity {
 	 * 停止向服务器上传热点信息
 	 */
 	private void stopSync() {
+
+		//先关闭线程池
+		if(mExecutor != null){
+			mExecutor.shutdown();
+		}
+
+		//再关闭mClientThread
+		mThd_ClientThread.interrupt();
 
 		Toast.makeText(WifiScanActivity.this, R.string.sync_stopped,
 				Toast.LENGTH_SHORT).show();

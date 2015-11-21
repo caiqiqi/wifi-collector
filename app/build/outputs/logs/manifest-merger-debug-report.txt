@@ -109,7 +109,3 @@ service#com.farproc.wifi.connecter.ReenableAllApsWhenNetworkStateChanged$Backgro
 ADDED from AndroidManifest.xml:81:2
 	android:name
 		ADDED from AndroidManifest.xml:81:11
-service#com.farproc.wifi.connecter.SocketIntentService
-ADDED from AndroidManifest.xml:83:2
-	android:name
-		ADDED from AndroidManifest.xml:83:11

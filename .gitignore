@@ -1,8 +1,9 @@
 # Android Studio captures folder
 captures/
 
-# Java class files
+# Java class/bin files
 *.class
+*.bin
 
 # Gradle files
 .gradle/

@@ -101,7 +101,7 @@ public class ClientThread implements Runnable {
 							msg.what = Constants.MESSAGE_RECEIVED_FROM_SERVER;
 							msg.obj = content;
 
-							// ***主线程中的Handler会处理的
+							// 因为这个mHandler是主线程的，所以主线程中的mHandler会处理的
 							mHandler.sendMessage(msg);
 							Log.d(TAG, "子线程的mHandler已发送消息：" + Constants.MESSAGE_RECEIVED_FROM_SERVER);
 						}

@@ -75,7 +75,6 @@
         </activity>
 
         <service android:name="com.farproc.wifi.connecter.ReenableAllApsWhenNetworkStateChanged$BackgroundService" />
-        <service android:name="com.farproc.wifi.connecter.SocketIntentService" />
     </application>
 
 </manifest>
