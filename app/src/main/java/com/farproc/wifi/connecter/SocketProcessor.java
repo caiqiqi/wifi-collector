@@ -23,8 +23,8 @@ public class SocketProcessor {
 	
 	private Intent intent;
 	
-	private ArrayList<ScanResult> mList_scanResult;
-	private List<String> mList_string;
+//	private ArrayList<ScanResult> mList_scanResult;
+//	private List<String> mList_string;
 	
 	private Socket s;
 	// 该线程所处理的Socket所对应的输入流
@@ -42,11 +42,13 @@ public class SocketProcessor {
 	}
 	
 	void processSocket(){
-		
+
+		Log.d(TAG, "processSocket");
 		initIO();
-		Bundle bundle = this.intent.getExtras();
-		mList_scanResult = bundle.getParcelableArrayList(KEY_PARCELABLE);
-		mList_string= convertScanResult(mList_scanResult);
+
+		final ArrayList<ScanResult> list_scanResult = this.intent.getParcelableArrayListExtra(KEY_PARCELABLE);
+
+		final List<String> list_string= convertScanResult(list_scanResult);
 		
 		Runnable runnable  = new Runnable(){
 
@@ -56,7 +58,7 @@ public class SocketProcessor {
 				try {
 					
 					if (oos != null) {
-						oos.writeObject(mList_string);
+						oos.writeObject(list_string);
 						oos.flush();
 						Log.d(TAG, "已写入ObjectOutputStream");
 						

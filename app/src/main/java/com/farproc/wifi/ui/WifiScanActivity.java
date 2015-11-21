@@ -74,10 +74,12 @@ public class WifiScanActivity extends PreferenceActivity {
  * 将任务交给IntentService去做
  */
 	private void assignToService(){
-		
-		mIntent = new Intent(this,SocketIntentService.class);
+
+		/*若mIntent未被创建，则新建一个*/
+		if(mIntent == null){
+			mIntent = new Intent(this,SocketIntentService.class);
+		}
 		//傻不傻，Bundle应该放在Intent里面啊
-		//Bundle bundle = new Bundle();
 		
 		if (mList_Results != null) {
 			
