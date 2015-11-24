@@ -103,16 +103,19 @@ public class ClientThread implements Runnable {
 					// 不断读取Socket输入流中的内容
 
 					try {
-						while ((content = br.readLine()) != null) {
-							Log.d(TAG, "子线程读取到消息");
+						//先得看br是否为空，因为可能这个时候Socket还没有建立好，导致BufferredReader为空
+						if (br != null) {
+							while ((content = br.readLine()) != null) {
+                                Log.d(TAG, "子线程读取到消息");
 
-							Message msg = new Message();
-							msg.what = Constants.MESSAGE_RECEIVED_FROM_SERVER;
-							msg.obj = content;
+                                Message msg = new Message();
+                                msg.what = Constants.MESSAGE_RECEIVED_FROM_SERVER;
+                                msg.obj = content;
 
-							// 因为这个mHandler是主线程的，所以主线程中的mHandler会处理的
-							mHandler.sendMessage(msg);
-							Log.d(TAG, "子线程的mHandler已发送消息：" + Constants.MESSAGE_RECEIVED_FROM_SERVER);
+                                // 因为这个mHandler是主线程的，所以主线程中的mHandler会处理的
+                                mHandler.sendMessage(msg);
+                                Log.d(TAG, "子线程的mHandler已发送消息：" + Constants.MESSAGE_RECEIVED_FROM_SERVER);
+                            }
 						}
 					} catch (IOException e) {
 						e.printStackTrace();

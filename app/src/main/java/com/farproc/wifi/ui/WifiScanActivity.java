@@ -69,8 +69,6 @@ public class WifiScanActivity extends PreferenceActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		initPrefs();
-
 		initWifiManager();
 
 		initAdapter();
@@ -89,8 +87,8 @@ public class WifiScanActivity extends PreferenceActivity {
 			mServerIp = Constants.SERVER_IP;
 			mServerPort = Constants.SERVER_PORT;
 		} else{
-			mServerIp = Constants.SERVER_IP;
-			mServerPort =Constants.SERVER_PORT;
+			mServerIp = ip;
+			mServerPort =port;
 		}
 
 	}
@@ -406,6 +404,9 @@ public class WifiScanActivity extends PreferenceActivity {
 		switch (mi.getItemId()) {
 
 			case R.id.action_start_sync:
+
+				//先得到配置文件里的IP和PORT
+				initPrefs();
 				//开启新线程（建立socket）
 				startNewThread();
 

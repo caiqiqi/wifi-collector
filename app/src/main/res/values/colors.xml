@@ -8,5 +8,6 @@
 	<!-- the following is added from another project because I like the style-->
 	<color name="gray_f0f0f0">#f0f0f0</color>
 	<color name="black">#000</color>
+	<color name="hint_foreground_dark">#808080</color>
 
 </resources>
