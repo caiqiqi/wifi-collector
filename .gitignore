@@ -19,3 +19,6 @@ local.properties
 *.apk
 *.ap_
 *.dex
+
+# patch file
+*.patch

@@ -30,6 +30,8 @@ import android.widget.Toast;
 import com.farproc.wifi.connecter.R;
 import com.farproc.wifi.utils.ClientThread;
 import com.farproc.wifi.utils.Constants;
+import com.farproc.wifi.utils.DialogUtil;
+import com.farproc.wifi.utils.SharedPrefsUtil;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -43,6 +45,11 @@ public class WifiScanActivity extends PreferenceActivity {
 	public static final String TAG = "WifiScanActivity";
 
 	private static final String KEY_PARCELABLE = "com.farproc.wifi.ui.WifiScanActivity";
+	private static final String NETWORK_OK = "网络连接畅通";
+	private static final int TIME_INTERVAL = 10;//单位：秒
+
+	private String mServerIp;
+	private int mServerPort;
 
 	private WifiManager mWifiManager;
 	// 用一个List来保存扫描到的各个热点的扫描结果
@@ -62,22 +69,40 @@ public class WifiScanActivity extends PreferenceActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		mWifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
+		initPrefs();
+
+		initWifiManager();
 
 		initAdapter();
 
 		initListView();
 
 		initHandler();
+	}
 
-		// 傻逼你说你这句不放在onResume()里面放哪里，
-		// 明明onResume()里才开始startScan()，尼玛在onCreate()里面搞当然不行
+	private void initPrefs() {
+
+		String ip = SharedPrefsUtil.getStringPrefrences(this, "IP", SharedPrefsUtil.FILE_NAME);
+		int port = SharedPrefsUtil.getIntPrefrences(this, "PORT", SharedPrefsUtil.FILE_NAME);
+
+		if (ip == null || port ==0){
+			mServerIp = Constants.SERVER_IP;
+			mServerPort = Constants.SERVER_PORT;
+		} else{
+			mServerIp = Constants.SERVER_IP;
+			mServerPort =Constants.SERVER_PORT;
+		}
+
+	}
+
+	private void initWifiManager() {
+		mWifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
 	}
 
 	private void sendToServer() {
 		// 定时向指定服务器发送热点信息
 		if (isOnline()) {
-			Log.d(TAG, "网络连接畅通");
+			Log.d(TAG, NETWORK_OK);
 
 			if (mList_Results != null) {
 				Log.d(TAG, "mList_Results不为null");
@@ -100,7 +125,7 @@ public class WifiScanActivity extends PreferenceActivity {
 				sendMessage(scanResult);
 			}
 
-		}, 0, 10, TimeUnit.SECONDS);
+		}, 0, TIME_INTERVAL, TimeUnit.SECONDS);
 	}
 
 	private void sendMessage(final List<ScanResult> scanResult) {
@@ -119,8 +144,11 @@ public class WifiScanActivity extends PreferenceActivity {
 	}
 
 	private void startNewThread() {
+		// 是不是这个开启新线程的动作如果放在onCreate()里面就不会执行onResume(）了？我感觉好像是的
+		// 另外，这是不是一个bug？
+
 		// 加一个新线程用于与服务器通信
-		mRun_ClientThread = new ClientThread(mHandler);
+		mRun_ClientThread = new ClientThread(mHandler, mServerIp, mServerPort);
 		// 在主线程中启动ClientThread线程用来 a与服务器通信
 		mThd_ClientThread = new Thread(mRun_ClientThread);
 		mThd_ClientThread.start();
@@ -146,7 +174,7 @@ public class WifiScanActivity extends PreferenceActivity {
 
 				if (msg.what == Constants.MESSAGE_RECEIVED_FROM_SERVER) {
 					// 先通知用户，已经接受到来自服务器的消息了
-					Toast.makeText(WifiScanActivity.this, TAG + "Synchronized!",
+					Toast.makeText(WifiScanActivity.this, "Synchronized!",
 							Toast.LENGTH_SHORT).show();
 
 					// TODO 还有后续的功能待完善。。。先不把msg显示出来
@@ -166,8 +194,6 @@ public class WifiScanActivity extends PreferenceActivity {
 		final IntentFilter filter = new IntentFilter(
 				WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
 		registerReceiver(mReceiver, filter);
-		// 是不是这个开启新线程的动作如果放在onCreate()里面就不会执行onResume(）了？我感觉好像是的
-		// 另外，这是不是一个bug？
 		mWifiManager.startScan();
 	}
 
@@ -385,18 +411,18 @@ public class WifiScanActivity extends PreferenceActivity {
 
 				//将热点信息发送到服务器（socket的另一端）
 				if (isOnline()){
-					Log.d(TAG, "网络连接畅通");
+					Log.d(TAG, NETWORK_OK);
 					sendToServer();
+					//结束之后将菜单选项设置为不可用
+					mi.setEnabled(false);
 				}
-
-
-				//结束之后将菜单选项设置为不可用
-				mi.setEnabled(false);
+				//靠，怪不得每次点击这里都会调用Toast。。。原来是没有加break，导致继续向下一个case执行了
+				break;
 
 
 			case R.id.action_stop_sync:
 				if (isOnline()) {
-					Log.d(TAG, "网络连接畅通");
+					Log.d(TAG, NETWORK_OK);
 
 					stopSync();
 					//结束之后将菜单选项设置为不可用
@@ -407,7 +433,7 @@ public class WifiScanActivity extends PreferenceActivity {
 
 			case R.id.action_set_server:
 				if (isOnline()) {
-					Log.d(TAG, "网络连接畅通");
+					Log.d(TAG, NETWORK_OK);
 
 					//设置服务器IP和端口
 					setServer();
@@ -422,8 +448,11 @@ public class WifiScanActivity extends PreferenceActivity {
 	 * 设置服务器的IP和port
 	 */
 	private void setServer() {
-		// TODO 设置服务器的IP和port
 
+		// TODO 设置服务器的IP和port
+		String setServer = "Set Server";
+		String message ="Set IP and Port";
+		DialogUtil.showAlertWithTextDialog(this, setServer, message);
 	}
 
 	/**
@@ -436,8 +465,11 @@ public class WifiScanActivity extends PreferenceActivity {
 			mExecutor.shutdown();
 		}
 
-		//再关闭mClientThread
-		mThd_ClientThread.interrupt();
+		if(mThd_ClientThread != null){
+			//再关闭mClientThread
+			mThd_ClientThread.interrupt();
+		}
+
 
 		Toast.makeText(WifiScanActivity.this, R.string.sync_stopped,
 				Toast.LENGTH_SHORT).show();

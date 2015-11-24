@@ -1,15 +1,14 @@
 package com.farproc.wifi.utils;
 
-import android.content.Context;
 import android.net.wifi.ScanResult;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.Process;
 import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
@@ -20,10 +19,12 @@ import java.util.List;
 
 public class ClientThread implements Runnable {
 
-	public static String TAG = "ClientThread";
+	public static final String TAG = "ClientThread";
 
-	private String SERVER_IP = Constants.SERVER_IP;
-	private int SERVER_PORT = Constants.SERVER_PORT;
+	private String server_ip;
+			//= Constants.SERVER_IP;
+	private int server_port;
+			//= Constants.SERVER_PORT;
 
 	private Socket s;
 
@@ -31,8 +32,6 @@ public class ClientThread implements Runnable {
 	public Handler rcvHandler;
 
 	private Handler mHandler;
-	//WifiScanActivity的引用
-//	private Context mContext;
 	// 该线程所处理的Socket所对应的输入流
 	private BufferedReader br;
 
@@ -41,11 +40,17 @@ public class ClientThread implements Runnable {
 	private ObjectOutputStream oos;
 
 
-	public ClientThread(Handler handler) {
+	public ClientThread(Handler handler, String ip, int port) {
 		this.mHandler = handler;
+		this.server_ip = ip;
+		this.server_port = port;
 	}
 
 	public void run() {
+
+		//11月24号看了一篇英文技术博客才知道，这里应该声明为后台任务的级别，以免影响主线程
+		//这个Process是android.os.Process，而不是java.lang.Process
+		Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
 
 		Log.d(TAG, "ClientThread started");
 		try {
@@ -89,6 +94,10 @@ public class ClientThread implements Runnable {
 
 				@Override
 				public void run() {
+
+					//声明为后台级别
+					Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+
 					Log.d(TAG, "子线程开启");
 					String content;
 					// 不断读取Socket输入流中的内容
@@ -124,7 +133,7 @@ public class ClientThread implements Runnable {
 
 		try {
 
-			s = new Socket(SERVER_IP, SERVER_PORT);
+			s = new Socket(server_ip, server_port);
 			Log.d(TAG,"Socket " + s + "创建成功");
 
 			br = new BufferedReader(new InputStreamReader(this.s.getInputStream()));

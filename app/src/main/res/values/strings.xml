@@ -1,32 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-/*
- * Wifi Connector
- * 
- * Copyright (c) 2011 Kevin Yuan (farproc@gmail.com)
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- * 
- **/ 
--->
-
 <resources>
     <string name="app_name">Wifi Connecter</string>
     
@@ -88,9 +61,7 @@
     
     <string name="wifi_change_password">Change password</string>
     <string name="button_change_password">Modify</string>
-    <!-- An edit field's grayed out value when it has not been modified -->
     <string name="wifi_password_unchanged">(unchanged)</string>
-    <!-- Button caption to save a configuration wifi -->
     <string name="wifi_save_config">Save</string>
     <string name="cancel">Cancel</string>
     
@@ -103,16 +74,12 @@
     <string name="wifi_empty_list_wifi_off">To see available networks, turn Wi\u2011Fi on.</string>
     
     <string name="wifi_ssid">Network name</string>
-    
-    <!-- Used in Wi-Fi settings dialogs when Wi-Fi does not have any security. -->
+
     <string name="wifi_security_none">None</string>
 
-    
-    <!-- Do not translate.  Terminology for wifi with both WPA/WPA2 security, or unknown -->
+
     <string name="wifi_security_wpa_wpa2">WPA/WPA2 PSK</string>
-    <!-- Do not translate.  Terminology for wifi with unknown PSK type -->
     <string name="wifi_security_psk_generic">@string/wifi_security_wpa_wpa2</string>
-    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
     <string name="wifi_security_eap">802.1x EAP</string>
     
     <string name="color_unspecified">Default</string>
@@ -121,18 +88,12 @@
     <string name="wifi_failed_save_message">Failed to save network</string>
     <string name="wifi_failed_forget_message">Failed to forget network</string>
     <string name="wifi_stopping">Turning off Wi\u2011Fi\u2026</string>
-    
-    <!-- Do not translate.  Concise terminology for wifi with WEP security -->
+
     <string name="wifi_security_short_wep">WEP</string>
-    <!-- Do not translate.  Concise terminology for wifi with WPA security -->
     <string name="wifi_security_short_wpa">WPA</string>
-    <!-- Do not translate.  Concise terminology for wifi with WPA2 security -->
     <string name="wifi_security_short_wpa2">WPA2</string>
-    <!-- Do not translate.  Concise terminology for wifi with both WPA/WPA2 security -->
     <string name="wifi_security_short_wpa_wpa2">WPA/WPA2</string>
-    <!-- Do not translate.  Concise terminology for wifi with unknown PSK type -->
     <string name="wifi_security_short_psk_generic">@string/wifi_security_short_wpa_wpa2</string>
-    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
     <string name="wifi_security_short_eap">802.1x</string>
     
     <string name="wifi_not_in_range">Not in range</string>
@@ -143,7 +104,7 @@
     
     <string name="confirm">OK</string>
 
-    <string name="start_sync">Start Sync with server</string>>
+    <string name="start_sync">Start Sync</string>>
     <string name="stop_sync">Stop Sync</string>
     <string name="set_server">Set Server</string>
     <string name="sync_stopped">"Sync stopped"</string>>
