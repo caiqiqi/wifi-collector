@@ -13,7 +13,7 @@ is indicated by the icon.
 ###When we click on the list item of the AP we're not connected to.
 -For "Secured" AP,a password is required.
 ![screenshot_2015-11-27-16-56-43.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-43.png)
--For "Open" AP,you simply need to choose connecting to it or not.
+- For "Open" AP,you simply need to choose connecting to it or not.
 ![screenshot_2015-11-27-16-57-01.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-57-01.png)
 
 
