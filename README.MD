@@ -1,4 +1,4 @@
-When we start up the application,a list of APs is displayed.
+###When we start up the application,a list of APs is displayed.
 ![screenshots/screenshot_2015-11-27-16-56-14.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-14.png)
 ###For state/encrytion of each AP
 - For AP secured with "WEP" or "PSK" is displayed as "Secured"
@@ -11,7 +11,7 @@ is indicated by the icon.
 ![screenshot_2015-11-27-16-56-32.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-32.png)
 
 ###When we click on the list item of the AP we're not connected to.
--For "Secured" AP,a password is required.
+- For "Secured" AP,a password is required.
 ![screenshot_2015-11-27-16-56-43.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-43.png)
 - For "Open" AP,you simply need to choose connecting to it or not.
 ![screenshot_2015-11-27-16-57-01.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-57-01.png)
