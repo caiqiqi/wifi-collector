@@ -4,6 +4,7 @@
 - AP secured with "WEP" or "PSK" is displayed as "Secured"
 - Open AP with no encryption is displayed as "Open".
 - AP we've connected to is displayed as "connected".
+###
 ### For signal strength of each AP:
 is indicated by the icon.
 
