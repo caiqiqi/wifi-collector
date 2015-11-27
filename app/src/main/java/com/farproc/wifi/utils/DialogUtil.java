@@ -45,15 +45,15 @@ public class DialogUtil {
                             //用字符串分割工具将输入分割成两个字符串
                             strsContent = StringUtil.splitStr(ip_port);
 
-                        } catch (Exception e) {
+                            if (strsContent != null) {
+                                SharedPrefsUtil.setStringPrefrences(context, "IP", strsContent[0], SharedPrefsUtil.FILE_NAME);
+                                SharedPrefsUtil.setIntPrefrences(context, "PORT", Integer.valueOf(strsContent[1]), SharedPrefsUtil.FILE_NAME);
+                            }
+
+                        } catch (ArrayIndexOutOfBoundsException e) {
                             //输入的格式不正确
                             Toast.makeText(context, "Format wrong",Toast.LENGTH_SHORT);
                             e.printStackTrace();
-                        }
-
-                        if (strsContent != null) {
-                            SharedPrefsUtil.setStringPrefrences(context, "IP", strsContent[0], SharedPrefsUtil.FILE_NAME);
-                            SharedPrefsUtil.setIntPrefrences(context, "PORT", Integer.valueOf(strsContent[1]), SharedPrefsUtil.FILE_NAME);
                         }
 
 

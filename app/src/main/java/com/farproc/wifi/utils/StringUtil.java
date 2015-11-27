@@ -17,7 +17,7 @@ public class StringUtil {
      * @param str “ip:port”
      * @return
      */
-    public static String[] splitStr(String str) {
+    public static String[] splitStr(String str) throws ArrayIndexOutOfBoundsException{
         String content = str;
         String[] strsContent = content.split(":");
         return strsContent;
