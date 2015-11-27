@@ -18,7 +18,7 @@ is indicated by the icon.
 ![screenshot_2015-11-27-16-57-01.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-57-01.png)
 
 
-**When we click the physical "menu" button or the icon in the top right corner.Three options are to be chosen.**
+**When we click the physical "menu" button or the icon in the top right corner,three options are to be chosen.**
 ![screenshot_2015-11-27-16-57-22.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-57-22.png)
 - "Set Server" means you should choose the IP address and port number your configured server has.Note that the IP address and port number is divided by the colon.You click "OK" and the configuration info is stored in a xml file(If you don't set the server,the default IP and port is acquired by the xml file which you set before)
 ![screenshot_2015-11-27-16-57-49.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-57-49.png)
