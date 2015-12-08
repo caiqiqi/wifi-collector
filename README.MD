@@ -6,7 +6,7 @@
 - AP we've connected to is displayed as "connected".
 
 **For signal strength of each AP**
-is indicated by the icon.
+is indicated by the icon on the left-hand side in each list item.
 
 **When we click on the list item of the AP we've connected to,a popup window is displayed showing the basic parameters that this connection could acquire.**
 ![screenshot_2015-11-27-16-56-32.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-32.png)
