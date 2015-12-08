@@ -31,10 +31,15 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <include
+    <TextView
+        android:id="@+id/title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        layout="@layout/title_view" />
+        android:drawableLeft="@drawable/ic_dialog_menu_generic"
+        android:drawablePadding="5dp"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="20sp"
+        android:padding="10dp" />
 
     <ScrollView
         android:id="@+id/content"

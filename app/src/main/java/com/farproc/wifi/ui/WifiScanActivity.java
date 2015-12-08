@@ -291,12 +291,9 @@ public class WifiScanActivity extends PreferenceActivity {
 			if (convertView == null) {
 				viewHolder = new ViewHolder();
 				convertView = inflater.inflate(R.layout.listitem_wifiap, null);
-				viewHolder.iv_rssi = ((ImageView) convertView
-						.findViewById(R.id.wifiap_item_iv_rssi));
-				viewHolder.tv_ssid = ((TextView) convertView
-						.findViewById(R.id.wifiap_item_tv_ssid));
-				viewHolder.tv_desc = ((TextView) convertView
-						.findViewById(R.id.wifiap_item_tv_desc));
+				viewHolder.iv_rssi = ((ImageView) convertView.findViewById(R.id.wifiap_item_iv_rssi));
+				viewHolder.tv_ssid = ((TextView) convertView.findViewById(R.id.wifiap_item_tv_ssid));
+				viewHolder.tv_desc = ((TextView) convertView.findViewById(R.id.wifiap_item_tv_desc));
 
 				convertView.setTag(viewHolder);
 			} else {
@@ -309,8 +306,7 @@ public class WifiScanActivity extends PreferenceActivity {
 
 			viewHolder.tv_ssid.setText(ap.SSID);
 			viewHolder.tv_desc.setText(getDesc(ap));
-			Picasso.with(mmContext).load(getRssiImgId(ap))
-					.into(viewHolder.iv_rssi);
+			Picasso.with(mmContext).load(getRssiImgId(ap)).into(viewHolder.iv_rssi);
 			return convertView;
 		}
 
