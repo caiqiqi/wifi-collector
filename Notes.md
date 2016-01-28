@@ -14,4 +14,4 @@ Finally,I searched it in google,and found an ![answer](http://stackoverflow.com/
 ![problem solved](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/%E9%9D%A0-%E6%94%B9%E6%88%9021.1.2%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86.PNG)
 
 Markdown不能设置图片大小，如果必须设置则应使用HTML标记`<img>`</br>
-HTML示例：`<img src="/assets/images/jian.jpg" alt="替代文本" title="标题文本" width="200" />`
+HTML示例：`<img src="/assets/images/jian.jpg" alt="替代文本" title="标题文本" width=50% height=50% />`
