@@ -11,9 +11,9 @@ is indicated by the icon on the left-hand side in each list item.</br>
 **When we click on the list item of the AP we've connected to,a popup window is displayed showing the basic parameters that this connection could acquire.**</br>
 <img src="https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-32.png" width=40% height=40%></br>
 **When we click on the list item of the AP we're not connected to.**</br>
-- For "Secured" AP,a password is required.
+- For "Secured" AP,a password is required.</br>
 <img src="https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-43.png" width=40% height=40%></br>
-- For "Open" AP,you simply need to choose connecting to it or not.
+- For "Open" AP,you simply need to choose connecting to it or not.</br>
 <img src="https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-57-01.png" width=40% height=40%></br>
 
 **When we click the physical "menu" button or the icon in the top right corner,three options are to be chosen.**</br>
