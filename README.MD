@@ -1,3 +1,6 @@
+## preview
+![preview](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/device-2015-11-24-210859.mp4_1455616398.gif)
+
 **When we start up the application,a list of APs is displayed.**
 ![screenshots/screenshot_2015-11-27-16-56-14.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-14.png)
 **For state/encrytion of each AP**
