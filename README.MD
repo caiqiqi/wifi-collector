@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 ## preview
 ![preview](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/device-2015-11-24-210859.mp4_1455616398.gif)
 
-**When we start up the application,a list of APs is displayed.**
-![screenshots/screenshot_2015-11-27-16-56-14.png](https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-14.png)
-**For state/encrytion of each AP**
-=======
 **When we start up the application,a list of APs is displayed.**</br>
 <img src="https://github.com/caiqiqi/android-wifi-connecter1/blob/master/img/screenshots/screenshot_2015-11-27-16-56-14.png" width=40% height=40%></br>
 **For state/encrytion of each AP**</br>
->>>>>>> 1714b32ae3c8166a411410c351dbd0e02ddde13a
 - AP secured with "WEP" or "PSK" is displayed as "Secured"
 - Open AP with no encryption is displayed as "Open".
 - AP we've connected to is displayed as "connected".
