@@ -103,6 +103,7 @@ public class ConfiguredNetworkContent extends BaseContent {
 
 	@Override
 	public CharSequence getTitle() {
+		//哦，原来在字符串里面也可以加一个花括号来引用对象的属性啊！
 		return mFloating.getString(R.string.wifi_connect_to, mScanResult.SSID);
 	}
 	

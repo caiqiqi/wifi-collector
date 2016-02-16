@@ -32,7 +32,9 @@ import android.net.wifi.WifiManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 public class Wifi {
@@ -40,13 +42,10 @@ public class Wifi {
 	public static final ConfigurationSecurities ConfigSec = ConfigurationSecurities.newInstance();
     
 	private static final String TAG = "Wifi Connecter";
+
 	
 	/**
 	 * Change the password of an existing configured network and connect to it
-	 * @param wifiMgr
-	 * @param config
-	 * @param newPassword
-	 * @return
 	 */
 	public static boolean changePasswordAndConnect(final Context context, final WifiManager wifiMgr, final WifiConfiguration config, final String newPassword, final int numOpenNetworksKept) {
 		ConfigSec.setupSecurity(config, ConfigSec.getWifiConfigurationSecurity(config), newPassword);
@@ -167,7 +166,24 @@ public class Wifi {
 			}
 		});
 	}
-	
+
+	/**
+	 * 根据信号强度排序
+	 * @param scanResults
+	 * @author caiqiqi
+     */
+	private static void sortByLevel(final List<ScanResult> scanResults) {
+
+		java.util.Collections.sort(scanResults, new Comparator<ScanResult>() {
+
+			@Override
+			public int compare(ScanResult object1,
+							   ScanResult object2) {
+				return object1.level - object2.level;
+			}
+		});
+	}
+
 	/**
 	 * Ensure no more than numOpenNetworksKept open networks in configuration list.
 	 */

@@ -9,7 +9,9 @@ import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
@@ -32,11 +34,14 @@ public class ClientThread implements Runnable {
 	public Handler rcvHandler;
 
 	private Handler mHandler;
+
 	// 该线程所处理的Socket所对应的输入流
 	private BufferedReader br;
 
-	private OutputStream os;
+	private InputStream is;
+	private ObjectInputStream ois;
 
+	private OutputStream os;
 	private ObjectOutputStream oos;
 
 
@@ -117,6 +122,13 @@ public class ClientThread implements Runnable {
                                 Log.d(TAG, "子线程的mHandler已发送消息：" + Constants.MESSAGE_RECEIVED_FROM_SERVER);
                             }
 						}
+
+						if (ois == null){
+
+
+						}
+
+
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -139,7 +151,11 @@ public class ClientThread implements Runnable {
 			s = new Socket(server_ip, server_port);
 			Log.d(TAG,"Socket " + s + "创建成功");
 
-			br = new BufferedReader(new InputStreamReader(this.s.getInputStream()));
+//			br = new BufferedReader(new InputStreamReader(this.s.getInputStream()));
+
+			is = this.s.getInputStream();
+			ois = new ObjectInputStream(is);
+
 			os = this.s.getOutputStream();
 			oos = new ObjectOutputStream(os);
 
