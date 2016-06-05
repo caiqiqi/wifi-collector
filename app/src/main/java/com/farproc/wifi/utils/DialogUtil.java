@@ -13,14 +13,16 @@ import android.widget.Toast;
  */
 public class DialogUtil {
 
+    public static final String DEFAULT_IP_PORT = "192.168.23.2:30000";
     /*带输入文本框的对话框*/
     public static void showAlertWithTextDialog(final Context context, String title, String message) {
 
 
         //文本输入框,并设置提示语,没有设置输入的限制
         final EditText edit_ip_port = new EditText(context);
-        edit_ip_port.setHint("IP:PORT");
-        edit_ip_port.setInputType(EditorInfo.TYPE_TEXT_FLAG_AUTO_COMPLETE);
+        edit_ip_port.setText(DEFAULT_IP_PORT);
+        /// /edit_ip_port.setHint("IP:PORT");
+        //edit_ip_port.setInputType(EditorInfo.TYPE_TEXT_FLAG_AUTO_COMPLETE);
 
         AlertDialog alertDialog = null;
         if (!((Activity) context).isFinishing()) {
@@ -59,7 +61,7 @@ public class DialogUtil {
 
                     } else {
                         //提示用户“输入为空”
-                        Toast.makeText(context, "Input null!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Input null !", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

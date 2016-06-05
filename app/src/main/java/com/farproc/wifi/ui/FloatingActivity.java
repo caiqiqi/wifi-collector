@@ -41,7 +41,7 @@ import com.farproc.wifi.connecter.Wifi;
 
 public class FloatingActivity extends Floating {
 
-	public static final String EXTRA_HOTSPOT = "com.farproc.wifi.connecter.extra.HOTSPOT";
+	public static final String parce_ScanResult = "ScanResult";
 
 	/**
 	 * 关于 ScanResult,它包括： 
@@ -77,7 +77,7 @@ public class FloatingActivity extends Floating {
 
 	private void doNewIntent(final Intent intent) {
 		// 得到该项AP的扫描结果
-		mScanResult = intent.getParcelableExtra(EXTRA_HOTSPOT);
+		mScanResult = intent.getParcelableExtra(parce_ScanResult);
 
 		if (mScanResult == null) {
 			Toast.makeText(this, "No data in Intent!", Toast.LENGTH_LONG).show();
