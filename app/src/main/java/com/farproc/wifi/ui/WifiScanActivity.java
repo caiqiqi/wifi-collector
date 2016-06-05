@@ -42,6 +42,7 @@ import java.util.concurrent.TimeUnit;
 public class WifiScanActivity extends PreferenceActivity {
 
 	public static final String TAG = "WifiScanActivity";
+	public static final String parce_ScanResult = "ScanResult";
 	private Context mContext = WifiScanActivity.this;
 
 	/*从服务器上推送过来的推荐可能有两种：“优选” 和 “传统”*/
@@ -63,8 +64,8 @@ public class WifiScanActivity extends PreferenceActivity {
 	private ListView mListView;
 	private WifiapAdapter mAdapter;
 
-	private ClientThread mRun_ClientThread;
-	private Thread mThd_ClientThread;
+	private ClientThread mClientThread;
+	private Thread mThread;
 
 	public ScheduledExecutorService mExecutor;
 
@@ -93,13 +94,13 @@ public class WifiScanActivity extends PreferenceActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		/* /* /* /* /* initWifiManager();
+		initWifiManager();
 
 		initAdapter();
 
 		initListView();
 
-		initHandler(); */ */ */ */ */
+		initHandler();
 	}
 
 	private void initPrefs() {
@@ -135,20 +136,20 @@ public class WifiScanActivity extends PreferenceActivity {
 	}
 
 
-	private void sendUsingThreadPool(final List<ScanResult> scanResult) {
+	private void sendUsingThreadPool(final List<ScanResult> scanResults) {
 		Log.d(TAG, "sendUsingThreadPool");
 		// 启动一个线程每10秒钟向日志文件写一次数据
 		mExecutor = Executors.newScheduledThreadPool(1);
 		mExecutor.scheduleWithFixedDelay(new Runnable() {
 			@Override
 			public void run() {
-				sendMessage(scanResult);
+				sendMessage(scanResults);
 			}
 
 		}, 0, TIME_INTERVAL, TimeUnit.SECONDS);
 	}
 
-	private void sendMessage(final List<ScanResult> scanResult) {
+	private void sendMessage(final List<ScanResult> scanResults) {
 
 		Log.d(TAG, "sendMessage");
 
@@ -156,11 +157,13 @@ public class WifiScanActivity extends PreferenceActivity {
 		Message msg = new Message();
 		msg.what = Constants.MESSAGE_TO_BE_SENT;
 		// 靠，直接把mList_Results作为msg.obj不就行了
-		msg.obj = scanResult;
+		msg.obj = scanResults;
 
-		if (mRun_ClientThread.rcvHandler != null) {
-			mRun_ClientThread.rcvHandler.sendMessage(msg);
+		if (mClientThread.rcvHandler != null){
+			Log.d(TAG, "rcvHandler不为null");
+			mClientThread.rcvHandler.sendMessage(msg);
 		}
+
 	}
 
 	private void startNewThread() {
@@ -168,10 +171,10 @@ public class WifiScanActivity extends PreferenceActivity {
 		// 另外，这是不是一个bug？
 
 		// 加一个新线程用于与服务器通信
-		mRun_ClientThread = new ClientThread(mHandler, mServerIp, mServerPort);
+		mClientThread = new ClientThread(mHandler, mServerIp, mServerPort);
 		// 在主线程中启动ClientThread线程用来 a与服务器通信
-		mThd_ClientThread = new Thread(mRun_ClientThread);
-		mThd_ClientThread.start();
+		mThread = new Thread(mClientThread);
+		mThread.start();
 	}
 
 	private void initAdapter() {
@@ -412,7 +415,8 @@ public class WifiScanActivity extends PreferenceActivity {
 	private void startFloatingActivity(final Context context,
 									   final ScanResult scanResult_hotspot) {
 
-		final Intent intent = new Intent(context, FloatingActivity.class);
+		Intent intent = new Intent(context, FloatingActivity.class);
+		intent.putExtra(parce_ScanResult, scanResult_hotspot);
 		context.startActivity(intent);
 	}
 
@@ -431,33 +435,37 @@ public class WifiScanActivity extends PreferenceActivity {
 
 			case R.id.action_start_sync:
 
-				//先得到配置文件里的IP和PORT
-				initPrefs();
-				//开启新线程（建立socket）
-				startNewThread();
+				mi.setEnabled(false);
 
 				//将热点信息发送到服务器（socket的另一端）
 				if (isOnline()){
 					Log.d(TAG, NETWORK_OK);
+					//先得到配置文件里的IP和PORT
+					initPrefs();
+					//开启新线程（建立socket）
+					startNewThread();
 					sendToServer();
 					//结束之后将菜单选项设置为不可用
-					mi.setEnabled(false);
+					mi.setEnabled(true);
+
 				}
 				//靠，怪不得每次点击这里都会调用Toast。。。原来是没有加break，导致继续向下一个case执行了
 				break;
 
 
 			case R.id.action_stop_sync:
+				mi.setEnabled(false);
 				if (isOnline()) {
 					Log.d(TAG, NETWORK_OK);
 
 					stopSync();
-					//结束之后将菜单选项设置为不可用
-					mi.setEnabled(false);
+					//结束之后将菜单选项设置为可用
+					mi.setEnabled(true);
 
 				}
 				break;
 
+			// set server的过程很重要，因为这一步会开启新线程
 			case R.id.action_set_server:
 				if (isOnline()) {
 					Log.d(TAG, NETWORK_OK);
@@ -476,7 +484,7 @@ public class WifiScanActivity extends PreferenceActivity {
 	 */
 	private void setServer() {
 
-		// TODO 设置服务器的IP和port
+		// 设置服务器的IP和port
 		String setServer = "Set Server";
 		String message ="Set IP and Port";
 		DialogUtil.showAlertWithTextDialog(this, setServer, message);
@@ -492,12 +500,12 @@ public class WifiScanActivity extends PreferenceActivity {
 			mExecutor.shutdown();
 		}
 
-		if(mThd_ClientThread != null){
+		if(mThread != null){
 			//再关闭mClientThread
-			mThd_ClientThread.interrupt();
+			mThread.interrupt();
 		}
 
-
+		Log.d("WifiScanActivity", "Sync stopped");
 		Toast.makeText(mContext, R.string.sync_stopped,  Toast.LENGTH_SHORT).show();
 	}
 
