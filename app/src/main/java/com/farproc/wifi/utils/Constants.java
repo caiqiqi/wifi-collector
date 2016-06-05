@@ -2,10 +2,10 @@ package com.farproc.wifi.utils;
 
 public interface Constants {
 
-	public static String SERVER_IP = "192.168.23.4";
+	String SERVER_IP = "192.168.23.4";
 	
-	public static int SERVER_PORT = 30000;
+	int SERVER_PORT = 30000;
 	
-	public static final int MESSAGE_TO_BE_SENT = 1;
-	public static final int MESSAGE_RECEIVED_FROM_SERVER = 2;
+	String MESSAGE_TO_BE_SENT            = "message to be sent";
+	String MESSAGE_RECEIVED_FROM_SERVER  = "message received from the server";
 }

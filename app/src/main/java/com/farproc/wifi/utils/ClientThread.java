@@ -49,13 +49,15 @@ public class ClientThread implements Runnable {
 		this.mHandler = handler;
 		this.server_ip = ip;
 		this.server_port = port;
+
+		rcvHandler =  new MyHander();
+		//Log.d(TAG, "rcvHandler对象建立");
+		//initSocket();
+		//不能放这里(主线程里不能进行网络操作)，不然主线程会直接崩溃，android.os.NetworkOnMainThreadException
 	}
 
 	public void run() {
 
-		//11月24号看了一篇英文技术博客才知道，这里应该声明为后台任务的级别，以免影响主线程
-		//这个Process是android.os.Process，而不是java.lang.Process
-		Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
 
 		Log.d(TAG, "ClientThread started");
 		try {
@@ -63,46 +65,15 @@ public class ClientThread implements Runnable {
 			initSocket();
 			// 为当前线程初始化Looper
 			Looper.prepare();
-
-
-			rcvHandler = new Handler() {
-				@Override
-				public void handleMessage(Message msg) {
-
-					if (msg.what == Constants.MESSAGE_TO_BE_SENT){
-							List<ScanResult> list_result = (List<ScanResult>) msg.obj;
-							List<String> list_string = convertScanResult(list_result);
-
-							try {
-
-								if (oos != null) {
-									oos.writeObject(list_string);
-									oos.flush();
-									Log.d(TAG, "已写入ObjectOutputStream");
-								}
-
-							} catch (UnsupportedEncodingException e) {
-								e.printStackTrace();
-							} catch (IOException e) {
-								e.printStackTrace();
-							}
-
-					}
-				}
-
-			};
+			//rcvHandler =  new MyHander();
+			//Log.d(TAG, "rcvHandler对象建立");
 
 
 			//必须要这这里启动一个新线程，而不能直接写run方法里面的代码，因为如果不新开一个线程，那么loop不会运行
 			// 启动一条子线程来读取服务器响应的数据
 			new Thread() {
-
 				@Override
 				public void run() {
-
-					//声明为后台级别
-					Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-
 					Log.d(TAG, "子线程开启");
 					String content;
 					// 不断读取Socket输入流中的内容
@@ -123,10 +94,7 @@ public class ClientThread implements Runnable {
                             }
 						}
 
-						if (ois == null){
-
-
-						}
+						//if (ois == null){}
 
 
 					} catch (IOException e) {
@@ -149,12 +117,12 @@ public class ClientThread implements Runnable {
 		try {
 
 			s = new Socket(server_ip, server_port);
-			Log.d(TAG,"Socket " + s + "创建成功");
+			Log.d(TAG,"Socket " + "创建成功" + s);
 
-//			br = new BufferedReader(new InputStreamReader(this.s.getInputStream()));
+			br = new BufferedReader(new InputStreamReader(this.s.getInputStream()));
 
-			is = this.s.getInputStream();
-			ois = new ObjectInputStream(is);
+			//is = this.s.getInputStream();
+			//ois = new ObjectInputStream(is);
 
 			os = this.s.getOutputStream();
 			oos = new ObjectOutputStream(os);
@@ -167,6 +135,7 @@ public class ClientThread implements Runnable {
 	
 /** 由于ScanResult不能Serizilible，这里将其转换为String */
 	private List<String> convertScanResult(List<ScanResult> list){
+		Log.d(TAG, "ScanResult对象转换中...");
 		List<String> strList= new ArrayList<String>();
 		String strScanResult;
 		for (ScanResult scanResult: list){
@@ -176,5 +145,33 @@ public class ClientThread implements Runnable {
 		Log.d(TAG, "ScanResult对象转换成功");
 		return strList;
 		
+	}
+
+	public class MyHander extends Handler{
+		@Override
+		public void handleMessage(Message msg) {
+
+			if (msg.what == Constants.MESSAGE_TO_BE_SENT){
+				Log.d(TAG, "rcvHandler收到消息");
+				List<ScanResult> list_result = (List<ScanResult>) msg.obj;
+				List<String> list_string = convertScanResult(list_result);
+
+				try {
+
+					if (oos != null) {
+						Log.d(TAG, "正在写入ObjectOutputStream...");
+						oos.writeObject(list_string);
+						oos.flush();
+						Log.d(TAG, "已写入ObjectOutputStream");
+					}
+
+				} catch (UnsupportedEncodingException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+			}
+		}
 	}
 }
