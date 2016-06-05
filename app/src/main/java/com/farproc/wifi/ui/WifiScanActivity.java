@@ -99,7 +99,7 @@ public class WifiScanActivity extends PreferenceActivity {
 
 		initListView();
 
-		initHandler(); */ */ */ */ */
+		initHandler(); */
 	}
 
 	private void initPrefs() {
