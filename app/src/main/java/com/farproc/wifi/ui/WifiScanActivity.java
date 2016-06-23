@@ -83,7 +83,7 @@ public class WifiScanActivity extends PreferenceActivity {
 				mList_Results = mWifiManager.getScanResults();
 
 				mAdapter.notifyDataSetChanged();
-
+				//开始扫描热点信息
 				mWifiManager.startScan();
 			}
 
@@ -93,13 +93,14 @@ public class WifiScanActivity extends PreferenceActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		//初始化以用来扫描热点信息
 		initWifiManager();
 
+		//Android界面显示相关的
 		initAdapter();
-
 		initListView();
 
+		//初始化子线程与UI线程(主线程)通信的Handler对象
 		initHandler();
 	}
 
@@ -172,7 +173,7 @@ public class WifiScanActivity extends PreferenceActivity {
 
 		// 加一个新线程用于与服务器通信
 		mClientThread = new ClientThread(mHandler, mServerIp, mServerPort);
-		// 在主线程中启动ClientThread线程用来 a与服务器通信
+		// 在主线程中启动ClientThread线程用来与服务器通信
 		mThread = new Thread(mClientThread);
 		mThread.start();
 	}
@@ -449,7 +450,6 @@ public class WifiScanActivity extends PreferenceActivity {
 					mi.setEnabled(true);
 
 				}
-				//靠，怪不得每次点击这里都会调用Toast。。。原来是没有加break，导致继续向下一个case执行了
 				break;
 
 

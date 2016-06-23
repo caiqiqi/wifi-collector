@@ -38,9 +38,6 @@ public class ClientThread implements Runnable {
 	// 该线程所处理的Socket所对应的输入流
 	private BufferedReader br;
 
-	private InputStream is;
-	private ObjectInputStream ois;
-
 	private OutputStream os;
 	private ObjectOutputStream oos;
 
@@ -51,8 +48,6 @@ public class ClientThread implements Runnable {
 		this.server_port = port;
 
 		rcvHandler =  new MyHander();
-		//Log.d(TAG, "rcvHandler对象建立");
-		//initSocket();
 		//不能放这里(主线程里不能进行网络操作)，不然主线程会直接崩溃，android.os.NetworkOnMainThreadException
 	}
 
@@ -94,9 +89,6 @@ public class ClientThread implements Runnable {
                             }
 						}
 
-						//if (ois == null){}
-
-
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -133,9 +125,8 @@ public class ClientThread implements Runnable {
 		}
 	}
 	
-/** 由于ScanResult不能Serizilible，这里将其转换为String */
+/** 由于ScanResult不能Serizilible，而且这个类只定义在Android的SDK中，这里将其转换为String */
 	private List<String> convertScanResult(List<ScanResult> list){
-		Log.d(TAG, "ScanResult对象转换中...");
 		List<String> strList= new ArrayList<String>();
 		String strScanResult;
 		for (ScanResult scanResult: list){
@@ -159,10 +150,8 @@ public class ClientThread implements Runnable {
 				try {
 
 					if (oos != null) {
-						Log.d(TAG, "正在写入ObjectOutputStream...");
 						oos.writeObject(list_string);
 						oos.flush();
-						Log.d(TAG, "已写入ObjectOutputStream");
 					}
 
 				} catch (UnsupportedEncodingException e) {
