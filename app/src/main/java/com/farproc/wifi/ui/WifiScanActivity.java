@@ -81,9 +81,9 @@ public class WifiScanActivity extends PreferenceActivity {
 			// An access point scan has completed
 			if (action.equals(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION)) {
 				mList_Results = mWifiManager.getScanResults();
-
+				//更新界面的Adapter已更新界面
 				mAdapter.notifyDataSetChanged();
-				//开始扫描热点信息
+				//扫描热点信息
 				mWifiManager.startScan();
 			}
 
